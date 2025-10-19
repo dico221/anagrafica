@@ -1,0 +1,8 @@
+.a {
+    display: flex;
+    gap: 4vh;
+}
+
+.info {
+    text-align: center;
+}
