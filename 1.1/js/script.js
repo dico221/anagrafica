@@ -9,7 +9,7 @@ function stampa() {
     let info = document.getElementById("stampaInfo");
     console.log(eta)
     let gen;
-    if (eta >= 1901 && eta <= 1927) {
+    if (eta <= 1927) {
         gen = "Greatest Generation";
     } else if (eta >= 1928 && eta <= 1945) {
         gen = "Generazione Silenziosa";
