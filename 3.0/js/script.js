@@ -1,4 +1,4 @@
-function stampa() {
+function stampa(t) {
     let nome = document.getElementById("nome").value;
     let cognome = document.getElementById("cognome").value;
     let indirizzo = document.getElementById("indirizzo").value;
@@ -10,7 +10,7 @@ function stampa() {
     let veicoli = [];
     let gender;
     let materia;
-    
+    let prov = document.getElementById("provincia").value;
     let gen;
     if (eta <= 1927) {
         gen = "Greatest Generation";
@@ -27,9 +27,9 @@ function stampa() {
     } else if(eta >= 2013) {
         gen = "Generazione Alpha";
     } else {
-        gen = "non impostata"
+        gen = ""
     }
-
+/*
     if(document.getElementById("veicolo1").checked){
         veicoli.push(document.getElementById("veicolo1").value)
     }
@@ -51,8 +51,22 @@ function stampa() {
             gender = document.getElementsByName("sesso")[i].value
         }
     }
-
+*/
+    for (let i = 1; i <= 5; i++) {
+        if (document.getElementById("veicolo" + i) && document.getElementById("veicolo" + i).checked) {
+            veicoli.push(document.getElementById("veicolo" + i).value);
+        }
+    }
     materia = document.getElementById("materia").value;
+    if(gender == undefined){
+        gender = ""
+    }
 
-    info.innerHTML = "Nome: "+ nome + "<br><br><br>" + "Cognome: "+cognome + "<br><br><br>" + "Città: "+citta + "<br><br><br>" + "CAP: "+cap + "<br><br><br>" + "Generazione: "+gen + "<br><br><br>";
+    console.log(veicoli)
+    console.log(prov);
+    if(t)
+        info.innerHTML = "Nome: "+ nome + "<br><br><br>" + "Cognome: "+cognome + "<br><br><br>" + "Sesso: " + gender + "<br><br><br>" + "Veicoli: " + veicoli.join(" ")+ "<br><br><br>" + "Indirizzo: " + indirizzo + "<br><br><br>"+ "Città: "+citta + "<br><br><br>" + "CAP: "+cap + "<br><br><br>" + "Materia preferita: " + materia + "<br><br><br>" +  "Generazione: "+gen + "<br><br><br>";
+    else{
+        info.innerHTML = "";
+    }
 }
