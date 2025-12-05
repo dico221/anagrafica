@@ -45,13 +45,12 @@ function stampa(t) {
     if(document.getElementById("veicolo5").checked){
         veicoli.push(document.getElementById("veicolo5").value)
     }
-
+*/
     for(i=0;i<document.getElementsByName("sesso").length;i++) {
         if(document.getElementsByName("sesso")[i].checked){
             gender = document.getElementsByName("sesso")[i].value
         }
     }
-*/
     for (let i = 1; i <= 5; i++) {
         if (document.getElementById("veicolo" + i) && document.getElementById("veicolo" + i).checked) {
             veicoli.push(document.getElementById("veicolo" + i).value);
