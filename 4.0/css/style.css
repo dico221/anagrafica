@@ -1,0 +1,20 @@
+.a {
+    display: flex;
+    gap: 4vh;
+}
+
+
+
+label, p {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size:small;
+}
+
+.info {
+    text-align: center;
+}
+
+.subm {
+    margin-bottom: 5%;
+    color:blue;
+}
