@@ -1,11 +1,11 @@
 let warning = document.getElementById("asdf");
 function funzione() {
     let persona = {
-        nome: document.getElementById("nome").value,
-        cognome: document.getElementById("cognome").value
+        nome: document.getElementById("nome").value.trim(),
+        cognome: document.getElementById("cognome").value.trim()
     }
     if(persona.nome.trim() != "" && persona.cognome.trim() != ""){
-        localStorage.setItem("persona" + localStorage.length.toString().trim(), JSON.stringify(persona))
+        localStorage.setItem("persona" + localStorage.length.toString(), JSON.stringify(persona))
         window.location.href = "./stampa.html"}
     else {
         warning.style.color = "red"
