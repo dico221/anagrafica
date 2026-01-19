@@ -1,4 +1,4 @@
-let warning = document.getElementById("asd");
+let warning = document.getElementById("asdf");
 function funzione() {
     let persona = {
         nome: document.getElementById("nome").value,
