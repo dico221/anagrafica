@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dati</title>
+</head>
+<body>
+    <table id="tabellas"> </table>
+    <input type="button" value="Indietro" onclick="window.location.href = './index.html'">
+    <script>
+        let tabella = document.getElementById("tabellas")
+        if(localStorage.length != 0){
+            let thed1 = document.createElement("th")
+            let thed2 = document.createElement("th")
+            thed1.innerHTML = "Nome"
+            thed2.innerHTML = "Cognome"
+            tabella.appendChild(thed1)
+            tabella.appendChild(thed2)
+        } 
+        
+        for (let i = 0; i < localStorage.length; i++) {
+            let persona = JSON.parse(localStorage.getItem("persona" + i.toString()));
+            let tr = document.createElement("tr");
+            let td1 = document.createElement("td");
+            let td2 = document.createElement("td");
+            td1.innerHTML = persona.nome;
+            td2.innerHTML = persona.cognome;
+            tr.appendChild(td1);
+            tr.appendChild(td2);
+            tabella.appendChild(tr);
+        }
+        
+    </script>
+</body>
+</html>
