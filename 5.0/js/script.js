@@ -5,7 +5,7 @@ function funzione() {
         cognome: document.getElementById("cognome").value
     }
     if(persona.nome.trim() != "" && persona.cognome.trim() != ""){
-        localStorage.setItem("persona" + localStorage.length.toString(), JSON.stringify(persona))
+        localStorage.setItem("persona" + localStorage.length.toString().trim(), JSON.stringify(persona))
         window.location.href = "./stampa.html"}
     else {
         warning.style.color = "red"
