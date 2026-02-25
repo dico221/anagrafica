@@ -8,8 +8,9 @@ if (localStorage.getItem("persone") === null) {
 }
 function funzione() {
     
-    let gender;
+    let gender = undefined;
     let veicoli = [];
+    let materia = [];
     for(i=0;i<document.getElementsByName("sesso").length;i++) {
         if(document.getElementsByName("sesso")[i].checked){
             gender = document.getElementsByName("sesso")[i].value
@@ -21,6 +22,13 @@ function funzione() {
             veicoli.push(document.getElementById("veicolo" + i).value);
         }
     }
+    for (let i = 0; i < document.getElementById("materia").options.length; i++) {
+        if (document.getElementById("materia").options[i].selected) {
+            materia.push(document.getElementById("materia").options[i].value);
+        }
+    }
+
+        
     
     if(gender == undefined){
         gender = "non impostato"
@@ -36,7 +44,7 @@ function funzione() {
         provincia: document.getElementById("provincia").value.trim(),
         cap: document.getElementById("cap").value.trim(),
         eta: new Date().getFullYear() - document.getElementById("eta").value.substring(0,4),
-        materia: document.getElementById("materia").value,
+        materia: materia.join(", "),
         generazione: ""
     }
     if(document.getElementById("eta").value.substring(0,4) == ''){
@@ -100,8 +108,7 @@ function funzione() {
             warning.innerHTML = "Inserire nome e cognome"
         }
     }
-    
-}
+} 
 function cancella(){
     if(persone.length > 0){
         warning.style.color = "green";
