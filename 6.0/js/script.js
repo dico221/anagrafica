@@ -1,4 +1,3 @@
-let warning = document.getElementById("asdf");
 let persone;
 if (localStorage.getItem("persone") === null) {
     persone = []; 
@@ -48,7 +47,7 @@ function funzione() {
         feedback_email.innerHTML = '';
     }else{
         feedback_email.style.color = "red";
-        feedback_email.innerHTML = "CAP non valido";
+        feedback_email.innerHTML = "Email non valida";
         test = false;
     }
     if(fiscaleTest.test(document.getElementById("codice_fiscale").value.trim())){
@@ -151,32 +150,16 @@ function creaPersona(){
     if(persona.cap == ""){
         persona.cap = "non impostato"
     }
-
-    if(persona.nome.trim() != "" && persona.cognome.trim() != ""){
-        persone.push(persona);
-        localStorage.setItem("persone",JSON.stringify(persone))
-    }
-    else {
-        warning.style.color = "red"
-        if(persona.nome.trim() == "" && persona.cognome.trim() != ""){
-            warning.innerHTML = "Inserire nome"
-        }
-        else if(persona.cognome.trim() == "" && persona.nome.trim() != ""){
-            warning.innerHTML = "Inserire cognome"
-        }
-        else{
-            warning.innerHTML = "Inserire nome e cognome"
-        }
-    }
+    persone.push(persona);
+    localStorage.setItem("persone",JSON.stringify(persone))
 }
+
 
 function cancella(){
     if(persone.length > 0){
-        warning.style.color = "green";
-        warning.innerHTML = "Dati Cancellati"
+        alert("Dati Cancellati");
     } else {
-        warning.style.color = "orange";
-        warning.innerHTML = "Dati non presenti"
+        alert("Dati non presenti");
     }
     persone = []
     localStorage.setItem("persone",JSON.stringify(persone))
@@ -188,7 +171,6 @@ function controllo(){
         window.location.href = "./stampa.html";
     }
     else {
-        warning.style.color = "orange";
-        warning.innerHTML = "Dati non presenti"
+        alert("Dati non presenti")
     }
 }

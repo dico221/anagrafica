@@ -25,18 +25,22 @@
             let thead10 = document.createElement("th");
             let thead11 = document.createElement("th");
             let thead12 = document.createElement("th");
+            let thead13 = document.createElement("th");
+            let thead14 = document.createElement("th");
             thead1.innerHTML = "Nome"
             thead2.innerHTML = "Cognome"
-            thead3.innerHTML = "Sesso"
-            thead4.innerHTML = "Veicoli"
-            thead5.innerHTML = "Indirizzo"
-            thead6.innerHTML = "Città"
-            thead7.innerHTML = "Provincia"
-            thead8.innerHTML = "CAP"
-            thead9.innerHTML = "Età"
-            thead10.innerHTML = "Materia Preferita"
-            thead11.innerHTML = "Generazione"
-            thead12.innerHTML = "Cancella";
+            thead3.innerHTML = "Email"
+            thead4.innerHTML = "Codice fiscale"
+            thead5.innerHTML = "Sesso"
+            thead6.innerHTML = "Veicoli"
+            thead7.innerHTML = "Indirizzo"
+            thead8.innerHTML = "Città"
+            thead9.innerHTML = "Provincia"
+            thead10.innerHTML = "CAP"
+            thead11.innerHTML = "Età"
+            thead12.innerHTML = "Materia Preferita"
+            thead13.innerHTML = "Generazione"
+            thead14.innerHTML = "Cancella";
             tabella.appendChild(thead1)
             tabella.appendChild(thead2)
             tabella.appendChild(thead3)
@@ -49,6 +53,8 @@
             tabella.appendChild(thead10)
             tabella.appendChild(thead11)
             tabella.appendChild(thead12)
+            tabella.appendChild(thead13)
+            tabella.appendChild(thead14)
         } 
         
         for (let i = 0; i < persona.length; i++) {
@@ -66,6 +72,8 @@
             let td10 = document.createElement("td");
             let td11 = document.createElement("td");
             let td12 = document.createElement("td");
+            let td13 = document.createElement("td");
+            let td14 = document.createElement("td");
             let buttons = document.createElement("button");
             
             buttons.setAttribute('id', i);
@@ -76,16 +84,18 @@
             buttons.addEventListener("click", onClick, false);
             td1.innerHTML = persona[i].nome;
             td2.innerHTML = persona[i].cognome;
-            td3.innerHTML = persona[i].sesso;
-            td4.innerHTML = persona[i].veicoli;
-            td5.innerHTML = persona[i].indirizzo;
-            td6.innerHTML = persona[i].citta;
-            td7.innerHTML = persona[i].provincia;
-            td8.innerHTML = persona[i].cap;
-            td9.innerHTML = persona[i].eta;
-            td10.innerHTML = persona[i].materia;
-            td11.innerHTML = persona[i].generazione;
-            td12.appendChild(buttons);
+            td3.innerHTML = persona[i].email;
+            td4.innerHTML = persona[i].fiscale;
+            td5.innerHTML = persona[i].sesso;
+            td6.innerHTML = persona[i].veicoli;
+            td7.innerHTML = persona[i].indirizzo;
+            td8.innerHTML = persona[i].citta;
+            td9.innerHTML = persona[i].provincia;
+            td10.innerHTML = persona[i].cap;
+            td11.innerHTML = persona[i].eta;
+            td12.innerHTML = persona[i].materia;
+            td13.innerHTML = persona[i].generazione;
+            td14.appendChild(buttons);
             tr.appendChild(td1);
             tr.appendChild(td2);
             tr.appendChild(td3);
@@ -98,6 +108,8 @@
             tr.appendChild(td10);
             tr.appendChild(td11);
             tr.appendChild(td12);
+            tr.appendChild(td13);
+            tr.appendChild(td14 );
             tabella.appendChild(tr);
         }
         function cancellas(id){
