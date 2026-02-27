@@ -18,7 +18,7 @@ function funzione() {
     const emailTest = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/;
     const capTest =/^[A-Za-z0-9\s-]{3,10}$/;
     const fiscaleTest = /^[A-Z]{6}[0-9]{2}[A-Z][0-9]{2}[A-Z][0-9]{3}[A-Z]$/;
-    let test = false;
+    let test = true;
 
     if (nomeTest.test(document.getElementById("nome").value.trim())) {
         feedback_nome.innerHTML = '';
@@ -61,8 +61,7 @@ function funzione() {
 
 
 
-    if(document.getElementById(""))
-
+    console.log(test)
     if(test){ creaPersona() }
 } 
 
