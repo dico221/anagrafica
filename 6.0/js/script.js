@@ -13,7 +13,7 @@ function funzione() {
     let feedback_email = document.getElementById("feedback_email");
     let feedback_fiscale = document.getElementById("feedback_fiscale");
     let feedback_cap = document.getElementById("feedback_cap");
-    const nomeTest = /^[\p{L}\s]+$/u;
+    const nomeTest = /^[a-zA-ZàèìòùÀÈÌÒÙ\s'-]{2,50}$/u;
     const emailTest = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/;
     const capTest =/^[A-Za-z0-9\s-]{3,10}$/;
     const fiscaleTest = /^[A-Z]{6}[0-9]{2}[A-Z][0-9]{2}[A-Z][0-9]{3}[A-Z]$/;
